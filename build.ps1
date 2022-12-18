@@ -15,7 +15,7 @@ if (!(Test-Connection github.com -Quiet -Count 2)) {
 }
 
 if (!(Test-Path "DVD.iso")) {
-    Write-Host "Copy an LTSC 2021+ ISO to 'DVD.iso'. 32-bit and IoT are not recommended and untested."
+    Write-Host "Copy an LTSC 2021+ ISO to 'DVD.iso'. 32-bit and IoT are not recommended, have no support, and are untested."
     Pause
     Exit
 }
