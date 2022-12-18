@@ -1,7 +1,5 @@
 # CamoOS
 
----
-
 ## 🟩 What CamoOS is
 
 CamoOS is a free, private, and secure operating system built upon Windows LTSC.
