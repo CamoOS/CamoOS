@@ -10,13 +10,11 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
 
 if (!(Test-Connection github.com -Quiet -Count 2)) {
     Write-Host "Please connect to the Internet."
-    Pause
     Exit
 }
 
 if (!(Test-Path "DVD.iso")) {
     Write-Host "Copy an LTSC 2021+ ISO to 'DVD.iso'. 32-bit and IoT are not recommended, have no support, and are untested."
-    Pause
     Exit
 }
 
