@@ -15,7 +15,7 @@ Almost everything that O&O ShutUp's not recommended level blocks/removes, which 
 
 ## 🟦 How do I compile CamoOS?
 
-Firstly, extract an LTSC 2021+ ISO using 7-Zip or similar tools (IoT not recommended) (older versions may work, but untested), to a folder called DVD next to the build script. Then right click, build.cmd, and run as admin. It will perform it's necessary checks, and will produce an ISO.
+Firstly, extract an LTSC 2021+ ISO using 7-Zip or similar tools (IoT and 32-bit not recommended) (older versions may work, but untested), to a folder called DVD next to the build script. Then right click, build.cmd, and run as admin. It will perform it's necessary checks, and will produce an ISO.
 
 ## 🟨 How do I install CamoOS?
 
