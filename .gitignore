@@ -1,6 +1,8 @@
 DVD/
 DVD.bak/
 DVD.iso
-CamoOS*.iso
-$OEM$\$$\Setup\Scripts\Firefox.msi
-$OEM$\$$\Setup\Scripts\MAS_AIO.cmd
+CamoOS_built_*.iso
+CamoOS_built_*.iso.sha1
+$OEM$/$$/Setup/Scripts/Firefox.msi
+$OEM$/$$/Setup/Scripts/MAS_AIO.cmd
+mount/
