@@ -11,7 +11,7 @@ CamoOS is a free, private, and secure operating system built upon Windows LTSC.
  - A privacy-first ISO, such as AME. CamoOS is designed for security as well.
 ## 🟪 What's not supported in CamoOS?
 
-Almost everything that O&O ShutUp's not recommended level blocks, which can easily be restored as needed.
+Almost everything that O&O ShutUp's not recommended level blocks/removes, which can easily be restored as needed.
 
 ## 🟦 How do I compile CamoOS?
 
