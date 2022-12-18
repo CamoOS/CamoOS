@@ -51,10 +51,11 @@ echo Mounting image
 mkdir mount
 dism /mount-image /imagefile:DVD\sources\install.wim /index:1 /mountdir:mount
 
-:: Download Firefox
+:: Download Firefox and MAS
 
-echo Downloading Firefox
+echo Downloading Firefox and MAS
 curl -L "https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win64&lang=en-US" -o $OEM$\$$\Setup\Scripts\Firefox.msi
+curl -L "https://raw.githubusercontent.com/massgravel/Microsoft-Activation-Scripts/master/MAS/All-In-One-Version/MAS_AIO.cmd" -o $OEM$\$$\Setup\Scripts\MAS_AIO.cmd
 
 :: Load hives
 
