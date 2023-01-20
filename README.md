@@ -40,7 +40,7 @@ This is perfectly normal, UninstallAllEdgeChromium doesn't do a good job a lot o
 </details>
 <details>
 <summary>My ISO contains OneDrive. Why?</summary>
-OneDrive is not removed because depending on the user's threat model, it might be useful. You can uninstall it if you wish, though some ISOs won't contain it.
+OneDrive is not removed because depending on the user's threat model, it might be useful. You can uninstall it if you wish, though some ISOs won't contain it. Besides, ShutUp10 may remove it's spying anyway.
 </details>
 <details>
 <summary>Building failed!</summary>
