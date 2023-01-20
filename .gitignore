@@ -1,6 +1,6 @@
 DVD/
-DVD.bak/
 DVD.iso
+cache.wim
 CamoOS_built_*.iso
 CamoOS_built_*.iso.sha1
 $OEM$/$$/Setup/Scripts/Firefox.msi

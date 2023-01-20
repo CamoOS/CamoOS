@@ -14,7 +14,7 @@ if (!(Test-Connection github.com -Quiet -Count 2)) {
 }
 
 if (!(Test-Path "DVD.iso")) {
-    Write-Host "Copy an LTSC 2021+ ISO to 'DVD.iso'. 32-bit and IoT are not recommended, have no support, and are untested."
+    Write-Host "Copy a Mini11 22H2 ISO to 'DVD.iso'. Tested with Beta 1. Other builds may not get updates."
     Exit
 }
 
@@ -34,15 +34,18 @@ Write-Host "Downloading Firefox and MAS"
 Start-BitsTransfer -Source "https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win&lang=en-US" -Destination "`$OEM$\`$$\Setup\Scripts\Firefox.msi" -Description "Downloading Firefox"
 Start-BitsTransfer -Source "https://raw.githubusercontent.com/massgravel/Microsoft-Activation-Scripts/master/MAS/All-In-One-Version/MAS_AIO.cmd" -Destination "`$OEM$\`$$\Setup\Scripts\MAS_AIO.cmd" -Description "Downloading MAS"
 
+if (Test-Path .\cache.wim) {
+    Remove-Item .\DVD\sources\install.esd -Force
+    Copy-Item .\cache.wim .\DVD\sources\install.wim -Force
+}
+
 if (Test-Path .\DVD\sources\install.esd) {
     Write-Host "Converting ESD to WIM"
-    Export-WindowsImage -SourceImagePath .\DVD\sources\install.esd -SourceName "Windows 10 Enterprise LTSC" -DestinationImagePath .\DVD\sources\install.wim -CompressionType fast
+    Export-WindowsImage -SourceImagePath .\DVD\sources\install.esd -SourceIndex 1 -DestinationImagePath .\DVD\sources\install.wim -CompressionType fast
     Remove-Item .\DVD\sources\install.esd -Force
-} 
-
-Write-Host "Deleting N version"
-
-Remove-WindowsImage -ImagePath .\DVD\sources\install.wim -Name "Windows 10 Enterprise N LTSC"
+    Write-Host "Building WIM cache"
+    Copy-Item .\DVD\sources\install.wim .\cache.wim -Force
+}
 
 Write-Host "Mounting image"
 
@@ -73,6 +76,10 @@ if (!(Test-Path $startupFolder)) {
 }
 
 Copy-Item .\RunOnce.cmd $startupFolder
+
+Write-Host "Adding ShutUp10 to the desktop"
+
+Copy-Item '.\$OEM$\$$\Setup\Scripts\OOSU10.exe' "mount\Users\Public\Desktop\ShutUp10.exe"
 
 Write-Host Unloading hives
 
