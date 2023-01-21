@@ -6,7 +6,7 @@
 - 🔏 A private operating system
 - 🔐 A secure operating system
 
-## ⛔ What CamoOS is not
+## 🚫 What CamoOS is not
 
 - 🎮 An ISO to improve performance for gaming, such as RekOS
 - 💾 A program that helps with privacy, such as O&O ShutUp
