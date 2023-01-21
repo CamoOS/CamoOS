@@ -7,15 +7,14 @@ fltmc > nul || exit /b
 
 :: Activate with MAS (we trust it since it is open source)
 
-call "%~dp0MAS_AIO.cmd" /KMS38
+call "%~dp0MAS_AIO.cmd" /HWID
 
-:: Shut up, LTSC!
+:: Shut up, Windows!
 
 %~dp0OOSU10.exe %~dp0ooshutup10.cfg /quiet
 
-:: Replace Edge with Firefox
+:: Install Firefox
 
-call "%~dp0UninstallAllEdgeChromium.cmd"
 start /wait msiexec /i "%~dp0Firefox.msi" /passive /quiet
 
 :: Disable Bluetooth
