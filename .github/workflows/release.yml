@@ -27,7 +27,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       with:
-        tag_name: Commit ${{ github.sha }}
+        tag_name: ${{ github.sha }}
         release_name: Commit ${{ github.sha }}
         prerelease: true
         body: "This build is automatically generated through GitHub Actions. Do note that it is based on Slim11, and thus does not get updates and may also not be activated."
