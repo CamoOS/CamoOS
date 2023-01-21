@@ -8,9 +8,11 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     }
 }
 
-if (!(Test-Connection github.com -Quiet -Count 2) -or !($env:CI -eq "true")) {
-    Write-Host "Please connect to the Internet."
-    Exit
+if (!($env:CI -eq "true")) {
+    if (!(Test-Connection github.com -Quiet -Count 2)) {
+        Write-Host "Please connect to the Internet."
+        Exit
+    }
 }
 
 if (!(Test-Path "DVD.iso")) {
