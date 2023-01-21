@@ -8,7 +8,7 @@ if (-Not ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdent
     }
 }
 
-if (!(Test-Connection github.com -Quiet -Count 2)) {
+if (!(Test-Connection github.com -Quiet -Count 2) -or !($env:CI -eq "true")) {
     Write-Host "Please connect to the Internet."
     Exit
 }
@@ -43,8 +43,10 @@ if (Test-Path .\DVD\sources\install.esd) {
     Write-Host "Converting ESD to WIM"
     Export-WindowsImage -SourceImagePath .\DVD\sources\install.esd -SourceIndex 1 -DestinationImagePath .\DVD\sources\install.wim -CompressionType fast
     Remove-Item .\DVD\sources\install.esd -Force
-    Write-Host "Building WIM cache"
-    Copy-Item .\DVD\sources\install.wim .\cache.wim -Force
+    if (!($env:CI -eq "true")) {
+        Write-Host "Building WIM cache"
+        Copy-Item .\DVD\sources\install.wim .\cache.wim -Force
+    }
 }
 
 Write-Host "Mounting image"
@@ -104,7 +106,7 @@ Write-Host Creating ISO
 
 $isoName = "CamoOS_built_$currentDate.iso"
 
-cmd.exe /c "oscdimg.exe -h -m -o -u2 -udfver102 -bootdata:2#p0,e,bDVD\boot\etfsboot.com#pEF,e,bDVD\efi\microsoft\boot\efisys.bin -lCamoOS DVD $isoName"
+cmd.exe /c "oscdimg.exe -h -m -o -u2 -udfver102 -bootdata:2#p0,e,bDVD\boot\etfsboot.com#pEF,e,bDVD\efi\microsoft\boot\efisys.bin -lCamoOSDVD $isoName"
 
 if (Test-Path $isoName) {
     $hash = (Get-FileHash $isoName -Algorithm SHA1).Hash.ToLower()
