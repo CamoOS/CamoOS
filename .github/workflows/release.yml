@@ -9,6 +9,9 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    
     - name: Download ISO
       run: |
         Start-BitsTransfer -Source "https://archive.org/download/miniwindows-slim11/Slim11%20Beta%202%20Eclair.iso" -Destination "DVD.iso"
@@ -19,7 +22,7 @@ jobs:
         powershell -File build.ps1
 
     - name: Create Release
-      uses: actions/create-release@v2
+      uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
