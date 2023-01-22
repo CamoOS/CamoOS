@@ -21,12 +21,13 @@ jobs:
       run: |
         curl.exe -L https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0-win-64bit-build1.zip -o "aria2.zip"
         Expand-Archive aria2.zip
-        aria2\aria2-1.36.0-win-64bit-build1\aria2c.exe --select-file=3 "magnet:?xt=urn:btih:79FA99C7529188B143EB76FA920A50DCB8CD6842&dn=miniwindows-slim11&tr=http%3A%2F%2Fbt1.archive.org%3A6969%2Fannounce&tr=http%3A%2F%2Fbt2.archive.org%3A6969%2Fannounce" -o "DVD.iso" -s 256
+        aria2\aria2-1.36.0-win-64bit-build1\aria2c.exe "https://archive.org/download/miniwindows-slim11/Slim11%20Beta%202%20Eclair.iso" -o "DVD.iso" -s 256
 
-    - name: Set CI variable and run build script
+    - name: Set CI variable and run build script and print size
       run: |
         $env:CI = "true"
         powershell -File build.ps1
+        Write-Host((Get-Item CamoOS_built_*.iso).length/1GB)
 
     - name: Release
       uses: softprops/action-gh-release@v1
@@ -37,5 +38,3 @@ jobs:
           This build is automatically generated through GitHub Actions. Do note that it is based on Slim11, and thus does not get updates and may also not be activated.
           
           This commit was very kindly contributed by @${{ github.triggering_actor }}.
-        tag_name: commit_${{ env.commit_id }}
-        name: "Commit ${{ env.commit_id }}"
