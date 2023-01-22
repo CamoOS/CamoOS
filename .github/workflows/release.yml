@@ -14,7 +14,7 @@ jobs:
     
     - name: Declare some variables
       run: |
-        $env:commit_id = git rev-parse --short HEAD
+        $env:commit_id = (git rev-parse --short HEAD) -join ''
         echo $env:commit_id
     
     - name: Download aria2 and ISO
