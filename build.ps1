@@ -81,10 +81,6 @@ if (!(Test-Path $startupFolder)) {
 
 Copy-Item .\RunOnce.cmd $startupFolder
 
-Write-Host "Adding ShutUp10 to the desktop"
-
-Copy-Item '.\$OEM$\$$\Setup\Scripts\OOSU10.exe' "mount\Users\Public\Desktop\ShutUp10.exe"
-
 Write-Host Unloading hives
 
 reg unload HKEY_USERS\ODU
