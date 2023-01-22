@@ -12,11 +12,6 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     
-    - name: Declare some variables
-      run: |
-        $env:commit_id = (git rev-parse --short HEAD) -join ''
-        echo $env:commit_id
-    
     - name: Download aria2 and ISO
       run: |
         curl.exe -L https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0-win-64bit-build1.zip -o "aria2.zip"
