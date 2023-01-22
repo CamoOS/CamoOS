@@ -16,9 +16,11 @@ jobs:
       run: |
         $env:commit_id = git rev-parse --short HEAD
     
-    - name: Download ISO
+    - name: Download aria2 and ISO
       run: |
-        curl.exe -L "https://archive.org/download/miniwindows-slim11/Slim11%20Beta%202%20Eclair.iso" -o "DVD.iso"
+        curl.exe -L https://github.com/aria2/aria2/releases/download/release-1.36.0/aria2-1.36.0-win-64bit-build1.zip -o "aria2.zip"
+        Expand-Archive aria2.zip
+        aria2\aria2-1.36.0-win-64bit-build1\aria2c.exe "https://archive.org/download/miniwindows-slim11/Slim11%20Beta%202%20Eclair.iso" -o "DVD.iso" -s 256
 
     - name: Set CI variable and run build script
       run: |
