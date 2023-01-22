@@ -11,7 +11,7 @@ call "%~dp0MAS_AIO.cmd" /HWID
 
 :: Shut up, Windows!
 
-%~dp0OOSU10.exe %~dp0ooshutup10.cfg /quiet
+reg import %~dp0OOSU10.reg
 
 :: Install Firefox
 
@@ -20,7 +20,7 @@ start /wait msiexec /i "%~dp0Firefox.msi" /passive /quiet
 :: Disable Bluetooth
 
 sc config bthserv start=disabled
-powershell stop-service -name bthserv -force
+net stop bthserv
 
 :: Remove scripts
 
