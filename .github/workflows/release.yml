@@ -12,6 +12,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
     
+    - name: Declare some variables
+      run: |
+        $env:commit_id = git rev-parse --short HEAD
+    
     - name: Download ISO
       run: |
         curl.exe -L "https://archive.org/download/miniwindows-slim11/Slim11%20Beta%202%20Eclair.iso" -o "DVD.iso"
@@ -21,25 +25,14 @@ jobs:
         $env:CI = "true"
         powershell -File build.ps1
 
-    - name: Create Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+    - name: Release
+      uses: softprops/action-gh-release@v1
       with:
-        tag_name: commit_${{ github.sha }}
-        release_name: Commit ${{ github.sha }}
-        prerelease: true
-        body: "This build is automatically generated through GitHub Actions. Do note that it is based on Slim11, and thus does not get updates and may also not be activated."
-        draft: false
-
-    - name: Upload release assets
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: CamoOS_built*
-        asset_name: CamoOS_built.zip
-        asset_content_type: application/zip
-
+        files: 'CamoOS_built_*'
+        token: ${{ secrets.GH_TOKEN }}
+        body: |
+          This build is automatically generated through GitHub Actions. Do note that it is based on Slim11, and thus does not get updates and may also not be activated.
+          
+          This commit was very kindly contributed by @${{ github.triggering_actor }}.
+        tag_name: commit_${{ env.commit_id }}
+        name: "Commit ${{ env.commit_id }}"
