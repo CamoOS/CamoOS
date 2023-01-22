@@ -33,3 +33,4 @@ jobs:
           This build is automatically generated through GitHub Actions. Do note that it is based on Slim11, and thus does not get updates and may also not be activated.
           
           This commit was very kindly contributed by @${{ github.triggering_actor }}.
+        prerelease: true
