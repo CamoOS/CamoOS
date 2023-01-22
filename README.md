@@ -59,6 +59,6 @@ If you haven't synced the checksum file along with the ISO, the checksums won't 
 ## ❤️ Special Thanks to
 
 - **O&O** for the privacy enhancements
-- **Kowan011** for Mini11
+- **Kowan011** for Mini11/Slim11
 - **Mozilla** for a decent browser to ship, LibreWolf is almost impossible
 - **WindowsAddict** for making a dead simple activator we can integrate easily
