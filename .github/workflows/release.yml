@@ -34,3 +34,5 @@ jobs:
           
           This commit was very kindly contributed by @${{ github.triggering_actor }}.
         prerelease: true
+        tag_name: commit_${{ github.sha }} 
+        name: Commit ${{ github.sha }} 
