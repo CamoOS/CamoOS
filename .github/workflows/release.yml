@@ -41,3 +41,5 @@ jobs:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: CamoOS_built*
         asset_name: CamoOS_built.zip
+        asset_content_type: application/zip
+
