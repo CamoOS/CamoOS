@@ -108,7 +108,7 @@ Write-Host Creating ISO
 
 $isoName = "CamoOS_built_$currentDate.iso"
 
-cmd.exe /c "oscdimg.exe -h -m -o -u2 -udfver102 -bootdata:2#p0,e,bDVD\boot\etfsboot.com#pEF,e,bDVD\efi\microsoft\boot\efisys.bin -lCamoOSDVD $isoName"
+cmd.exe /c "oscdimg.exe -h -m -o -u2 -udfver102 -bootdata:2#p0,e,bDVD\boot\etfsboot.com#pEF,e,bDVD\efi\microsoft\boot\efisys.bin -lCamoOS DVD $isoName"
 
 if (Test-Path $isoName) {
     $hash = (Get-FileHash $isoName -Algorithm SHA1).Hash.ToLower()
