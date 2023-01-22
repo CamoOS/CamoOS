@@ -1,6 +1,8 @@
 # CamoOS
 
-[![Build Release](https://github.com/CamoOS/CamoOS/actions/workflows/release.yml/badge.svg)](https://github.com/CamoOS/CamoOS/actions/workflows/release.yml) [![](https://shields.io/discord/1066751620794298378)](https://discord.gg/jdbzsYSTVJ)
+[![](https://img.shields.io/github/downloads/CamoOS/CamoOS/total)](https://github.com/CamoOS/CamoOS/releases/latest)
+[![Build Release](https://github.com/CamoOS/CamoOS/actions/workflows/release.yml/badge.svg)](https://github.com/CamoOS/CamoOS/actions/workflows/release.yml) 
+[![](https://shields.io/discord/1066751620794298378)](https://discord.gg/jdbzsYSTVJ)
 
 ## ❓ What CamoOS is
 
