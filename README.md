@@ -1,5 +1,7 @@
 # CamoOS
 
+[![Build Release](https://github.com/CamoOS/CamoOS/actions/workflows/release.yml/badge.svg)](https://github.com/CamoOS/CamoOS/actions/workflows/release.yml) [![](https://shields.io/discord/1066751620794298378)](https://discord.gg/jdbzsYSTVJ)
+
 ## ❓ What CamoOS is
 
 - 💸 A free operating system based on Mini11
