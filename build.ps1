@@ -100,6 +100,11 @@ Write-Host Copying OEM folder
 
 robocopy "`$OEM$" "DVD\sources\`$OEM$" /e
 
+if ($env:CI -eq "true") {
+    # Slim11 has a broken .NET
+    Remove-Item "DVD\sources\`$OEM$\`$$\Setup\Scripts\OOSU10.exe" -Force
+}
+
 Write-Host Copying autounattend files
 
 Copy-Item autounattend.xml DVD -Force
