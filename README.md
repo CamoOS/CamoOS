@@ -41,10 +41,6 @@ CamoOS comes activated out of the box, with MAS.
 ## 🤔 FAQ
 
 <details>
-<summary>There is a broken Edge application in the Start menu. Is this normal?</summary>
-This is perfectly normal, UninstallAllEdgeChromium doesn't do a good job a lot of times.
-</details>
-<details>
 <summary>My ISO contains the Store. Why?</summary>
 The Store isn't removed because with ShutUp10, it's not a big privacy concern anyway. And also some privacy tools are also available there (like the Diagnostic Data Viewer)
 </details>
