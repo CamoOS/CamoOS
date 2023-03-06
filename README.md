@@ -1,7 +1,7 @@
 # CamoOS
 
 [![](https://img.shields.io/github/downloads/CamoOS/CamoOS/total)](https://github.com/CamoOS/CamoOS/releases/latest)
-[![Build Release](https://github.com/CamoOS/CamoOS/actions/workflows/release.yml/badge.svg)](https://github.com/CamoOS/CamoOS/actions/workflows/release.yml) 
+[![Build Release](https://github.com/CamoOS/CamoOS/actions/workflows/release.yml/badge.svg)](https://github.com/CamoOS/CamoOS/actions/workflows/release.yml)
 [![](https://shields.io/discord/1066751620794298378)](https://discord.gg/jdbzsYSTVJ)
 
 ## ❓ What CamoOS is
@@ -18,7 +18,7 @@
 
 ## ☹️ What's not supported in CamoOS?
 
-Everything that O&O ShutUp's not recommended level blocks/removes (except for some security-related options), which can easily be restored as needed.
+Everything that O&O ShutUp's not recommended level blocks/removes (except for some security-related options), as well as everything Mini11 (if you built it yourself) or Slim11 (if you downloaded from the CI) removes.
 
 ## ❔ How do I create a CamoOS ISO?
 
