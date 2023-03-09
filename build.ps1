@@ -90,6 +90,11 @@ Write-Host Unloading hives
 reg unload HKEY_USERS\ODU
 reg unload HKEY_LOCAL_MACHINE\SOFT
 
+if ($env:CI -eq "true") {
+    Write-Host Delete compact
+    Remove-Item .\mount\Windows\System32\compact.exe -Force
+}
+
 Write-Host Unmounting image
 
 Dismount-WindowsImage -Path mount -Save
