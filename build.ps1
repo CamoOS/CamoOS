@@ -100,12 +100,6 @@ Write-Host Copying OEM folder
 
 robocopy "`$OEM$" "DVD\sources\`$OEM$" /e
 
-if ($env:CI -eq "true") {
-    # Slim11 has a broken .NET
-    Write-Host "Disabling ShutUp10"
-    Copy-Item "$env:systemroot\system32\rundll32.exe" "DVD\sources\`$OEM$\`$$\Setup\Scripts\OOSU10.exe" -Force
-}
-
 Write-Host Copying autounattend files
 
 Copy-Item autounattend.xml DVD -Force
