@@ -96,7 +96,7 @@ Dismount-WindowsImage -Path mount -Save
 
 if ($env:CI -eq "true") {
     Write-Host "Converting WIM to ESD"
-    Export-WindowsImage -SourceImagePath .\DVD\sources\install.wim -SourceIndex 1 -DestinationImagePath .\DVD\sources\install.esd -CompressionType recovery
+    Export-WindowsImage -SourceImagePath .\DVD\sources\install.wim -SourceIndex 1 -DestinationImagePath .\DVD\sources\install.esd -CompressionType max
     Remove-Item .\DVD\sources\install.wim -Force
 }
 
