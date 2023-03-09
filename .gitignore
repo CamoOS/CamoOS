@@ -5,4 +5,5 @@ CamoOS_built_*.iso
 CamoOS_built_*.iso.sha1
 $OEM$/$$/Setup/Scripts/Firefox.msi
 $OEM$/$$/Setup/Scripts/MAS_AIO.cmd
+$OEM$/$$/Setup/Scripts/hardentools-cli.exe
 mount/
