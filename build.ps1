@@ -94,6 +94,12 @@ Write-Host Unmounting image
 
 Dismount-WindowsImage -Path mount -Save
 
+if ($env:CI -eq "true") {
+    Write-Host "Converting WIM to ESD"
+    Export-WindowsImage -SourceImagePath .\DVD\sources\install.wim -SourceIndex 1 -DestinationImagePath .\DVD\sources\install.esd -CompressionType recovery
+    Remove-Item .\DVD\sources\install.wim -Force
+}
+
 Remove-Item mount -Force
 
 Write-Host Copying OEM folder
