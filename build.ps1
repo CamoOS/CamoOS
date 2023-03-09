@@ -31,10 +31,11 @@ Write-Host "Extracting ISO"
 
 .\7z.exe x DVD.iso -oDVD
 
-Write-Host "Downloading Firefox and MAS"
+Write-Host "Downloading Firefox, MAS, and hardentools"
 
 Start-BitsTransfer -Source "https://download.mozilla.org/?product=firefox-msi-latest-ssl&os=win&lang=en-US" -Destination "`$OEM$\`$$\Setup\Scripts\Firefox.msi" -Description "Downloading Firefox"
 Start-BitsTransfer -Source "https://raw.githubusercontent.com/massgravel/Microsoft-Activation-Scripts/master/MAS/All-In-One-Version/MAS_AIO.cmd" -Destination "`$OEM$\`$$\Setup\Scripts\MAS_AIO.cmd" -Description "Downloading MAS"
+Start-BitsTransfer -Source "https://github.com/securitywithoutborders/hardentools/releases/download/v2.4/hardentools-cli.exe" -Destination "`$OEM$\`$$\Setup\Scripts\hardentools-cli.exe" -Description "Downloading hardentools"
 
 if (Test-Path .\cache.wim) {
     Remove-Item .\DVD\sources\install.esd -Force
@@ -84,6 +85,10 @@ Copy-Item .\RunOnce.cmd $startupFolder
 Write-Host "Adding ShutUp10 to the desktop"
 
 Copy-Item '.\$OEM$\$$\Setup\Scripts\OOSU10.exe' "mount\Users\Public\Desktop\ShutUp10.exe"
+
+Write-Host "Adding hardentools to the desktop"
+
+Start-BitsTransfer -Source "https://github.com/securitywithoutborders/hardentools/releases/download/v2.4/hardentools.exe" -Destination "mount\Users\Public\Desktop\hardentools.exe"
 
 Write-Host Unloading hives
 

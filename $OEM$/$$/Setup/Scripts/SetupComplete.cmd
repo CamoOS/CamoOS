@@ -22,6 +22,10 @@ start /wait msiexec /i "%~dp0Firefox.msi" /passive /quiet
 sc config bthserv start=disabled
 powershell stop-service -name bthserv -force
 
+:: Harden
+
+%~dp0hardentools-cli.exe -harden
+
 :: Remove scripts
 
 cd \
