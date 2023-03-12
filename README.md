@@ -22,7 +22,7 @@ Everything that O&O ShutUp's not recommended level blocks/removes (except for so
 
 ## ❔ How do I create a CamoOS ISO?
 
-1. Firstly, copy a [Mini11 22H2 ISO](https://mega.nz/file/uN5QCDRD#qKwoQdiv6kd4CXkTeu1aqL5kjLfSFEXfL5mmBOxoY-Q) to DVD.iso
+1. Firstly, copy a [Mini11 22H2 ISO](https://archive.org/download/mini11-22h2/Mini11%2022H2%20Beta%201%20Whistler.iso) to DVD.iso
 1. You will also need to make sure that your execution policy is Bypass or Unrestricted.
 1. Open a PowerShell window as admin.
 1. Hold Shift and right click build.ps1. Then click Copy as path.
